@@ -7,19 +7,6 @@
 #define TYPE_LEN 3
 #define FLIGHT_LEN 4
 
-/****************************************************
-    Menu:
-     1. Cargar los dats de los pasajeros desde el archivo data.csv (modo texto).
-     2. Cargar los datos de los pasajeros desde el archivo data.csv (modo binario).
-     3. Alta de pasajero
-     4. Modificar datos de pasajero
-     5. Baja de pasajero
-     6. Listar pasajeros
-     7. Ordenar pasajeros
-     8. Guardar los datos de los pasajeros en el archivo data.csv (modo texto).
-     9. Guardar los datos de los pasajeros en el archivo data.csv (modo binario).
-    10. Salir
-*****************************************************/
 int main()
 {
 PassengerType type [TYPE_LEN]= {{1,"FirstClass"},{2,"ExecutiveClass"},{3,"EconomyClass"}};
@@ -30,6 +17,8 @@ PassengerStatus flightStatus[FLIGHT_LEN]= {{1,"Aterrizado"},{2,"En Horario"},{3,
     int flagSave = -1;
     int overWriteData = 1;
     int checkSave = -1;
+
+    // Llamado a funcion que genera el archivo del ID
 /*  if(generateIdFile("idFile.bin") == 0)
     {
     	printf("Se creo y cargo id en lista binaria");

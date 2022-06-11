@@ -446,7 +446,7 @@ int id_Max(char* path)
 }
 
 
-int Passenger_searchForId(LinkedList* pArrayListPassenger, int id)
+int Passenger_Index(LinkedList* pArrayListPassenger, int id)
 {
 	Passenger* pPassenger = NULL;
 	int idAux;
@@ -478,7 +478,7 @@ Passenger* getPassenger(LinkedList* pArrayListPassenger, PassengerType* passenge
 		idMax =id_Max("idFile.bin");
 		Passenger_print(pArrayListPassenger, passengerType, typeLen, flightStatus, flightLen);
 		id = EnterNumberInt("Ingrese el Id de un pasajero: ", "Error, ingrese un Id valido: ", idMax , 1);
-		index =Passenger_searchForId(pArrayListPassenger, id);
+		index =Passenger_Index(pArrayListPassenger, id);
 		pPassenger = ll_get(pArrayListPassenger,  index);
 
 
@@ -744,7 +744,7 @@ int sortPassengerByIdSubMenu(LinkedList* pArrayListPassenger)
 
 				case 2:
 								printf("Esto puede demorar unos segundos...");
-								ll_sort(pArrayListPassenger, PassengerSortIds, 2);
+								ll_sort(pArrayListPassenger, PassengerSortIds, 0);
 								rtn = 0;
 								break;
 
@@ -769,7 +769,7 @@ int sortPassengersByNameSubMenu(LinkedList* pArrayListPassenger)
 
 			case 2:
 							printf("Esto puede demorar unos segundos...");
-							ll_sort(pArrayListPassenger, PassengerSortNames, 2);
+							ll_sort(pArrayListPassenger, PassengerSortNames, 0);
 							rtn = 0;
 							break;
 
@@ -794,7 +794,7 @@ int sortPassengersByLastNameSubMenu(LinkedList* pArrayListPassenger)
 
 			case 2:
 							printf("Esto puede demorar unos segundos...");
-							ll_sort(pArrayListPassenger, PassengerSortLastNames, 2);
+							ll_sort(pArrayListPassenger, PassengerSortLastNames, 0);
 							rtn = 0;
 							break;
 
@@ -820,7 +820,7 @@ int sortPassengersByPriceSubMenu(LinkedList* pArrayListPassenger)
 
 				case 2:
 								printf("Esto puede demorar unos segundos...");
-								ll_sort(pArrayListPassenger, PassengerSortPrices, 2);
+								ll_sort(pArrayListPassenger, PassengerSortPrices, 0);
 								rtn = 0;
 								break;
 
